@@ -81,11 +81,27 @@ const possibleHeadlines = [
 function displayRandomHeadline() {
   const randomIndex = Math.floor(Math.random() * possibleHeadlines.length);
   const generatedHeadline = possibleHeadlines[randomIndex];
-  document.getElementById("headline").innerText = generatedHeadline;
+  const headlineElement = document.getElementById("headline");
+  const tickerContentElement = document.getElementById("ticker");
+
+  headlineElement.innerText = generatedHeadline;
+
+  // Calculate the animation duration based on the headline length
+  const animationDuration = (generatedHeadline.length / 15) * 10; // 15 is an approximate average number of characters per second
+
+  // Set the animation duration dynamically
+  tickerContentElement.style.animationDuration = `${animationDuration}s`;
+
+  // Clear the animation class to restart the animation
+  tickerContentElement.classList.remove("ticker-animation");
+
+  // Add the class again to trigger the animation
+  void tickerContentElement.offsetWidth;
+  tickerContentElement.classList.add("ticker-animation");
 }
 
 // Display the first headline immediately
 displayRandomHeadline();
 
-// Set interval to display a new headline every 10 seconds (10000 milliseconds)
-setInterval(displayRandomHeadline, 10000);
+// Call the displayRandomHeadline function every time the animation completes
+document.getElementById("ticker").addEventListener("animationiteration", displayRandomHeadline);
