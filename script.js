@@ -87,7 +87,7 @@ function displayRandomHeadline() {
   headlineElement.innerText = generatedHeadline;
 
   // Calculate the animation duration based on the headline length
-  const animationDuration = (generatedHeadline.length / 15) * 10; // 15 is an approximate average number of characters per second
+  const animationDuration = (generatedHeadline.length / 15) * 5; // 15 is an approximate average number of characters per second
 
   // Set the animation duration dynamically
   tickerContentElement.style.animationDuration = `${animationDuration}s`;
