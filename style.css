@@ -1,0 +1,42 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.ticker-container {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ticker-content span {
+  display: inline-block;
+  padding-right: 50px; /* Space between headlines */
+  animation: ticker-animation 30s linear infinite;
+}
+
+@keyframes ticker-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
